@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.11)  11 JAN 2025 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.11)  11 JAN 2025 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,7 +841,7 @@ Package rerunfilecheck Info: Checksums for `menu.out':
 Here is how much of TeX's memory you used:
  19906 strings out of 480247
  375012 string characters out of 5896151
- 643101 words of memory out of 5000000
+ 643151 words of memory out of 5000000
  37499 multiletter control sequences out of 15000+600000
  501645 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -850,7 +850,7 @@ Here is how much of TeX's memory you used:
 vips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmr17.pfb>
-Output written on output/menu.pdf (7 pages, 97014 bytes).
+Output written on output/menu.pdf (7 pages, 96549 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
