@@ -1,0 +1,41 @@
+name: Generate Menu
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up TeX Live
+        run: sudo apt-get install -y texlive texlive-latex-extra pandoc
+
+      - name: Generate PDF
+        run: |
+          mkdir output
+          pdflatex -output-directory=output menu.tex
+        shell: bash
+
+      - name: Generate HTML
+        run: |
+          mkdir output
+          pandoc menu.tex -o output/menu.html
+        shell: bash
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: menu-files
+          path: output/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
