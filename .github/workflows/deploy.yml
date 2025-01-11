@@ -25,7 +25,7 @@ jobs:
       - name: Generate HTML
         run: |
           mkdir -p output
-          pandoc menu.tex -o output/menu.html
+          pandoc menu.tex -s -c pandoc.css -o output/index.html
         shell: bash
 
       - name: Upload Artifacts
