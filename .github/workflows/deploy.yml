@@ -18,13 +18,13 @@ jobs:
 
       - name: Generate PDF
         run: |
-          mkdir output
+          mkdir -p output
           pdflatex -output-directory=output menu.tex
         shell: bash
 
       - name: Generate HTML
         run: |
-          mkdir output
+          mkdir -p output
           pandoc menu.tex -o output/menu.html
         shell: bash
 
