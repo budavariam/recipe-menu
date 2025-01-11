@@ -10,11 +10,16 @@
 \usepackage{tikz}
 \usepackage{multicol}
 \usepackage{background}
+\usepackage[T1]{fontenc}
 %\usepackage[x11names]{xcolor}
 %\usepackage[magyar]{babel}
-\usepackage{geometry}
+\usepackage[textwidth=12cm,centering]{geometry}
 \geometry{a4paper, margin=1in}
 
+\newcommand*\wb[3]{%
+  {\fontsize{#1}{#2}\usefont{T1}{custom}{xl}{n}#3}}
+  
+  %{\fontsize{#1}{#2}\usefont{U}{webo}{xl}{n}#3}}
 
 % Hyperref színek beállítása
 \hypersetup{
