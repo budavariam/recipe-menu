@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.11)  11 JAN 2025 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.11)  11 JAN 2025 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,7 +828,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7] (output/menu.aux)
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9] (output/menu.aux)
 
 Package rerunfilecheck Warning: File `menu.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -836,13 +854,13 @@ Package rerunfilecheck Warning: File `menu.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `menu.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  99F1507BB99F21A539863519D66A349B;3458.
+(rerunfilecheck)             After:  FBE4AFD5AD6B93979D399EF62D0E996B;4349.
  ) 
 Here is how much of TeX's memory you used:
- 19906 strings out of 480247
- 375012 string characters out of 5896151
- 643151 words of memory out of 5000000
- 37499 multiletter control sequences out of 15000+600000
+ 19919 strings out of 480247
+ 375127 string characters out of 5896151
+ 644151 words of memory out of 5000000
+ 37501 multiletter control sequences out of 15000+600000
  501645 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  100i,12n,104p,406b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -850,10 +868,10 @@ Here is how much of TeX's memory you used:
 vips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmr17.pfb>
-Output written on output/menu.pdf (7 pages, 96549 bytes).
+Output written on output/menu.pdf (9 pages, 99383 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
+ 101 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 35 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

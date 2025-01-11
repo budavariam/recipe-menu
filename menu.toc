@@ -10,7 +10,11 @@
 \contentsline {subsection}{\numberline {3.1}Reggeli: Gyümölcssaláta dióval}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Ebéd: Paradicsomos-csicseriborsós ragu}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Vacsora: Grillezett zöldségek hummusszal}{5}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Szombat és Vasárnap}{6}{section.4}%
+\contentsline {section}{\numberline {4}Szombat}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Reggeli: Főtt tojás friss zöldségekkel}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Ebéd: Rakott karfiol}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Vacsora: Céklás saláta kecskesajttal}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.2}Ebéd: Rostban gazdag zöldségpörkölt lencsével}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Vacsora: Céklás saláta kecskesajttal}{7}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Vasárnap}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Reggeli: Főtt tojás friss zöldségekkel}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Ebéd: Sütőtökös rakottas}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Vacsora: Zöldborsós tészta spenóttal}{8}{subsection.5.3}%
