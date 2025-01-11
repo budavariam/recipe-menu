@@ -41,6 +41,23 @@
   \vspace{1em}
 }
 
+% The page frame
+%\SetBgColor{Goldenrod3}
+\SetBgAngle{0}
+\SetBgScale{1}
+\SetBgOpacity{1}
+\SetBgContents{%
+\begin{tikzpicture}
+\node at (0.5\paperwidth,0) {\wb{80}{34}{E}\rule[55pt]{.3\textwidth}{0.4pt}%
+  \raisebox{50pt}{%
+  \makebox[.4\textwidth]{\ \fontsize{24}{29}\selectfont\scshape Menü }}%
+  \rule[55pt]{.3\textwidth}{0.4pt}\wb{80}{34}{F}};
+\node at (2.4,-0.5\textheight) {\rule{0.4pt}{.82\textheight}};
+\node at (19.1,-0.5\textheight) {\rule{0.4pt}{.82\textheight}};
+\node at (0.5\paperwidth,-\textheight) {\wb{80}{80}{G}\rule[-10pt]{\textwidth}{0.4pt}\wb{80}{34}{H}} ;
+\end{tikzpicture}%
+}
+
 % Dokumentum kezdete
 \title{\Huge Otthoni Rostgazdag Menü}
 \author{}
