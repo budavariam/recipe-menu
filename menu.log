@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.11)  11 JAN 2025 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.12)  12 JAN 2025 07:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,7 +933,7 @@ Package rerunfilecheck Info: Checksums for `menu.out':
 Here is how much of TeX's memory you used:
  20611 strings out of 480247
  386624 string characters out of 5896151
- 652566 words of memory out of 5000000
+ 652565 words of memory out of 5000000
  38161 multiletter control sequences out of 15000+600000
  511586 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
