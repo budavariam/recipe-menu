@@ -19,7 +19,7 @@ jobs:
       - name: Generate PDF
         run: |
           mkdir -p output
-          pdflatex -output-directory=output menu.tex
+          pdflatex -output-directory=output example.tex
         shell: bash
 
       - name: Generate HTML
