@@ -1,0 +1,73 @@
+% Define Victorian color
+\definecolor{victorianred}{RGB}{128,0,32}
+\definecolor{victoriangold}{RGB}{184,134,11}
+
+% Adjusted corner command
+\newcommand{\corner}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=\borderoffset, yshift=-\borderoffset]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at ([xshift=-\borderoffset, yshift=-\borderoffset]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at ([xshift=\borderoffset, yshift=\borderoffset]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at ([xshift=-\borderoffset, yshift=\borderoffset]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+  \end{tikzpicture}%
+}
+
+% Adjusted cornerplus command
+\newcommand{\cornerplus}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=\borderoffset, yshift=-\borderoffset]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at ([xshift=-\borderoffset, yshift=-\borderoffset]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at ([xshift=\borderoffset, yshift=\borderoffset]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at ([xshift=-\borderoffset, yshift=\borderoffset]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+    \node[anchor=north] at ([yshift=-\borderoffset]current page.north){%
+      \pgfornament[width=6cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=south] at ([yshift=\borderoffset]current page.south){%
+      \pgfornament[width=6cm, color=victorianred]{#2}};
+  \end{tikzpicture}%
+}
+
+% Adjusted pt command
+\newcommand{\pt}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north] at ([yshift=-\borderoffset]current page.north){%
+      \pgfornament[width=6cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south] at ([yshift=\borderoffset]current page.south){%
+      \pgfornament[width=6cm, color=victorianred]{#1}};
+  \end{tikzpicture}%
+}
+
+% Sordísz beállítása
+\newcommand{\sordisz}{%
+  \vspace{1em}
+  \pt{87}
+  % \pt{84}
+  % \pt{71}
+  \vspace{1em}
+}
+
+
+% Add corner decorations to every page
+\AddToShipoutPicture{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=\borderoffset, yshift=-\borderoffset]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{63}};
+    \node[anchor=north east] at ([xshift=-\borderoffset, yshift=-\borderoffset]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{63}};
+    \node[anchor=south west] at ([xshift=\borderoffset, yshift=\borderoffset]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{63}};
+    \node[anchor=south east] at ([xshift=-\borderoffset, yshift=\borderoffset]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{63}};
+    \node[anchor=north] at ([yshift=-\borderoffset]current page.north){%
+      \pgfornament[width=6cm, symmetry=h, color=victorianred]{85}};
+    \node[anchor=south] at ([yshift=\borderoffset]current page.south){%
+      \pgfornament[width=6cm, color=victorianred]{85}};
+  \end{tikzpicture}%
+}

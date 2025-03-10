@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage[paper=a4paper, verbose, centering, margin=2.5cm]{geometry}
+\usepackage{pgfornament}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+% Define Victorian color
+\definecolor{victorianred}{RGB}{128,0,32}
+\definecolor{victoriangold}{RGB}{184,134,11}
+
+% Adjusted complete frame with flourishes connecting corners
+\newcommand{\victorianframeadjusted}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Corner ornaments
+    \node[anchor=north west] at ([xshift=2cm, yshift=-2cm]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at ([xshift=-2cm, yshift=-2cm]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at ([xshift=2cm, yshift=2cm]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at ([xshift=-2cm, yshift=2cm]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+    
+    % Top and bottom flourishes
+    \node[anchor=north] at ([yshift=-2cm]current page.north){%
+      \pgfornament[width=6.5cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=south] at ([yshift=2cm]current page.south){%
+      \pgfornament[width=6.5cm, color=victorianred]{#2}};
+      
+    % Left and right connecting flourishes (rotated)
+    \node[anchor=west, rotate=90] at ([xshift=2cm]current page.west){%
+      \pgfornament[width=6.5cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=east, rotate=-90] at ([xshift=-2cm]current page.east){%
+      \pgfornament[width=6.5cm, color=victorianred]{#2}};
+      
+    % Draw connecting lines between ornaments - top and bottom
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0cm,0.1cm)}]current page.north west) -- 
+      ([shift={(-8.7cm,0.1cm)}]current page.north);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(8.7cm,0.1cm)}]current page.north) -- 
+      ([shift={(-0cm,0.1cm)}]current page.north east);
+      
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0cm,-0.1cm)}]current page.south west) -- 
+      ([shift={(-8.7cm,-0.1cm)}]current page.south);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(8.7cm,-0.1cm)}]current page.south) -- 
+      ([shift={(-0cm,-0.1cm)}]current page.south east);
+      
+    % Draw connecting lines between ornaments - left and right
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0.1cm,-2cm)}]current page.north west) -- 
+      ([shift={(0.1cm,8.5cm)}]current page.west);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0.1cm,-8.5cm)}]current page.west) -- 
+      ([shift={(0.1cm,2cm)}]current page.south west);
+      
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(-0.1cm,-2cm)}]current page.north east) -- 
+      ([shift={(-0.1cm,8.5cm)}]current page.east);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(-0.1cm,-8.5cm)}]current page.east) -- 
+      ([shift={(-0.1cm,2cm)}]current page.south east);
+  \end{tikzpicture}%
+}
+
+% Improved cornerplus with complete frame - all sides with adjustments
+\newcommand{\victorianframeplusadjusted}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Corner ornaments
+    \node[anchor=north west] at ([xshift=2cm, yshift=-2cm]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at ([xshift=-2cm, yshift=-2cm]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at ([xshift=2cm, yshift=2cm]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at ([xshift=-2cm, yshift=2cm]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+    
+    % Top and bottom ornaments
+    \node[anchor=north] at ([yshift=-2cm]current page.north){%
+      \pgfornament[width=6.5cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=south] at ([yshift=2cm]current page.south){%
+      \pgfornament[width=6.5cm, color=victorianred]{#2}};
+      
+    % Left and right ornaments - properly positioned
+    \node[anchor=center, rotate=90] at ([xshift=2cm, yshift=0cm]current page.west){%
+      \pgfornament[width=6.5cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=center, rotate=-90] at ([xshift=-2cm, yshift=0cm]current page.east){%
+      \pgfornament[width=6.5cm, color=victorianred]{#2}};
+      
+    % Draw connecting lines with adjusted positions
+    % Top and bottom connections
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0cm,0.1cm)}]current page.north west) -- 
+      ([shift={(-8.7cm,0.1cm)}]current page.north);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(8.7cm,0.1cm)}]current page.north) -- 
+      ([shift={(-0cm,0.1cm)}]current page.north east);
+      
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0cm,-0.1cm)}]current page.south west) -- 
+      ([shift={(-8.7cm,-0.1cm)}]current page.south);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(8.7cm,-0.1cm)}]current page.south) -- 
+      ([shift={(-0cm,-0.1cm)}]current page.south east);
+      
+    % Left and right connections - with fixed positioning
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0.1cm,-2cm)}]current page.north west) -- 
+      ([shift={(0.1cm,8.5cm)}]current page.west);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(0.1cm,-8.5cm)}]current page.west) -- 
+      ([shift={(0.1cm,2cm)}]current page.south west);
+      
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(-0.1cm,-2cm)}]current page.north east) -- 
+      ([shift={(-0.1cm,8.5cm)}]current page.east);
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(-0.1cm,-8.5cm)}]current page.east) -- 
+      ([shift={(-0.1cm,2cm)}]current page.south east);
+  \end{tikzpicture}%
+}
+
+% Simple corners only - no connections
+\newcommand{\corner}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+  \end{tikzpicture}%
+}
+
+% Corners plus top and bottom decorations (original)
+\newcommand{\cornerplus}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[width=6.5cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[width=6.5cm, color=victorianred]{#2}};
+  \end{tikzpicture}%
+}
+
+% Top and bottom ornaments only
+\newcommand{\pt}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[symmetry=h, color=victorianred]{#1}};
+  \end{tikzpicture}%
+}
+
+\title{\textbf{\Large Victorian Style Document}}
+\author{Author's Name}
+\date{\today}
+
+\usepackage{kantlipsum}% for demo only
+
+\begin{document}
+\maketitle\thispagestyle{empty}
+\victorianframeadjusted{61}{85}
+
+\clearpage
+\kantlipsum[1-5]
+\victorianframeplusadjusted{63}{85}
+
+\clearpage
+\kantlipsum[6-10]
+\victorianframeadjusted{72}{88}
+
+\end{document}

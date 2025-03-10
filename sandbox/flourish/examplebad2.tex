@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{pgfornament}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% Define Victorian color scheme
+\definecolor{victorianred}{RGB}{128,0,32}
+\definecolor{victoriangold}{RGB}{184,134,11}
+\definecolor{victoriangreen}{RGB}{0,102,51}
+
+% Setup the fancy page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Better approach for page border - using eso-pic
+\newcommand{\victorianborder}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Draw the border frame first
+    \draw[line width=1pt, color=victorianred] 
+      ([shift={(1cm,1cm)}]current page.south west) rectangle 
+      ([shift={(-1cm,-1cm)}]current page.north east);
+    
+    % Draw a second decorative frame slightly inside
+    \draw[line width=0.5pt, color=victorianred] 
+      ([shift={(1.3cm,1.3cm)}]current page.south west) rectangle 
+      ([shift={(-1.3cm,-1.3cm)}]current page.north east);
+    
+    % Corner ornaments - properly positioned
+    % Top-left corner
+    \node[anchor=north west, inner sep=0pt] at ([shift={(1cm,-1cm)}]current page.north west) 
+      {\pgfornament[width=2cm, color=victorianred]{61}};
+    
+    % Top-right corner (flipped horizontally)
+    \node[anchor=north east, inner sep=0pt, xscale=-1] at ([shift={(-1cm,-1cm)}]current page.north east) 
+      {\pgfornament[width=2cm, color=victorianred]{61}};
+    
+    % Bottom-left corner (flipped vertically)
+    \node[anchor=south west, inner sep=0pt, yscale=-1] at ([shift={(1cm,1cm)}]current page.south west) 
+      {\pgfornament[width=2cm, color=victorianred]{61}};
+    
+    % Bottom-right corner (flipped both ways)
+    \node[anchor=south east, inner sep=0pt, xscale=-1, yscale=-1] at ([shift={(-1cm,1cm)}]current page.south east) 
+      {\pgfornament[width=2cm, color=victorianred]{61}};
+    
+    % Center ornaments on each side
+    % Top border
+    \node[anchor=north, inner sep=0pt] at ([yshift=-1cm]current page.north) 
+      {\pgfornament[width=3cm, color=victorianred]{71}};
+    
+    % Bottom border
+    \node[anchor=south, inner sep=0pt, yscale=-1] at ([yshift=1cm]current page.south) 
+      {\pgfornament[width=3cm, color=victorianred]{71}};
+    
+    % Left border
+    \node[anchor=west, inner sep=0pt, rotate=90] at ([xshift=1cm]current page.west) 
+      {\pgfornament[width=3cm, color=victorianred]{71}};
+    
+    % Right border
+    \node[anchor=east, inner sep=0pt, rotate=-90] at ([xshift=-1cm]current page.east) 
+      {\pgfornament[width=3cm, color=victorianred]{71}};
+    
+    % Additional ornaments along the border
+    % Top border ornaments
+    \foreach \x in {-5,-3,...,5}{
+      \node[anchor=south, inner sep=0pt] at ([xshift=\x cm, yshift=-1.3cm]current page.north) 
+        {\pgfornament[width=1cm, color=victorianred]{64}};
+    }
+    
+    % Bottom border ornaments
+    \foreach \x in {-5,-3,...,5}{
+      \node[anchor=north, inner sep=0pt, yscale=-1] at ([xshift=\x cm, yshift=1.3cm]current page.south) 
+        {\pgfornament[width=1cm, color=victorianred]{64}};
+    }
+    
+    % Left border ornaments
+    \foreach \y in {-8,-6,...,8}{
+      \node[anchor=east, inner sep=0pt, rotate=90] at ([xshift=1.3cm, yshift=\y cm]current page.west) 
+        {\pgfornament[width=1cm, color=victorianred]{64}};
+    }
+    
+    % Right border ornaments
+    \foreach \y in {-8,-6,...,8}{
+      \node[anchor=west, inner sep=0pt, rotate=-90] at ([xshift=-1.3cm, yshift=\y cm]current page.east) 
+        {\pgfornament[width=1cm, color=victorianred]{64}};
+    }
+  \end{tikzpicture}%
+}
+
+% Add the border to every page using eso-pic
+\AddToShipoutPictureBG{\victorianborder}
+
+% Create ornate section headings
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{victorianred}}
+  {}
+  {0em}
+  {%
+    \begin{tikzpicture}
+      \node[inner sep=0pt] (secname) {\thesection.~#1};
+      \node[anchor=west, inner sep=0pt, xshift=-1cm] at (secname.west) {\pgfornament[width=0.8cm, color=victorianred]{69}};
+      \node[anchor=east, inner sep=0pt, xshift=1cm] at (secname.east) {\pgfornament[width=0.8cm, color=victorianred]{69}};
+    \end{tikzpicture}%
+  }
+  
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{victoriangreen}}
+  {}
+  {0em}
+  {%
+    \begin{tikzpicture}
+      \node[inner sep=0pt] (subsecname) {\thesubsection.~#1};
+      \node[anchor=west, inner sep=0pt, xshift=-0.7cm] at (subsecname.west) {\pgfornament[width=0.5cm, color=victoriangreen]{67}};
+      \node[anchor=east, inner sep=0pt, xshift=0.7cm] at (subsecname.east) {\pgfornament[width=0.5cm, color=victoriangreen]{67}};
+    \end{tikzpicture}%
+  }
+
+% Create an ornate section divider
+\newcommand{\victoriandivider}{
+  \begin{center}
+    \begin{tikzpicture}
+      \node[inner sep=0pt] (center) {};
+      \node[anchor=center, inner sep=0pt] at (center) {\pgfornament[width=2cm, color=victoriangold]{71}};
+      \node[anchor=east, inner sep=0pt, xshift=-1cm] at (center.west) {\pgfornament[width=4cm, color=victoriangold]{88}};
+      \node[anchor=west, inner sep=0pt, xshift=1cm] at (center.east) {\pgfornament[width=4cm, symmetry=h, color=victoriangold]{88}};
+    \end{tikzpicture}
+  \end{center}
+}
+
+% Title page with Victorian ornaments
+\title{
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (title) {\Huge\bfseries\color{victorianred} Victorian Style Document};
+    \node[anchor=north, inner sep=0pt, yshift=1cm] at (title.north) {\pgfornament[width=5cm, color=victoriangold]{57}};
+    \node[anchor=south, inner sep=0pt, yshift=-1cm] at (title.south) {\pgfornament[width=5cm, symmetry=c, color=victoriangold]{57}};
+  \end{tikzpicture}
+  \vspace{1cm}
+}
+\author{
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (author) {\Large Prepared by Author's Name};
+    \node[anchor=north, inner sep=0pt, yshift=0.5cm] at (author.north) {\pgfornament[width=3cm, color=victoriangold]{60}};
+    \node[anchor=south, inner sep=0pt, yshift=-0.5cm] at (author.south) {\pgfornament[width=3cm, symmetry=c, color=victoriangold]{60}};
+  \end{tikzpicture}
+}
+\date{
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (date) {\Large March 11, 2025};
+    \node[anchor=west, inner sep=0pt, xshift=-0.7cm] at (date.west) {\pgfornament[width=0.5cm, color=victoriangreen]{67}};
+    \node[anchor=east, inner sep=0pt, xshift=0.7cm] at (date.east) {\pgfornament[width=0.5cm, color=victoriangreen]{67}};
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\section{Introduction to Victorian Style}
+\lipsum[1-2]
+
+\victoriandivider
+
+\section{Historical Context}
+\lipsum[3-4]
+
+\subsection{Cultural Influence}
+\lipsum[5]
+
+\subsection{Artistic Elements}
+\lipsum[6]
+
+\victoriandivider
+
+\section{Implementation in Modern Design}
+\lipsum[7-8]
+
+\victoriandivider
+
+\section{Conclusion}
+\lipsum[9]
+
+\end{document}

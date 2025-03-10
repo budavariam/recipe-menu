@@ -3,7 +3,7 @@ name: Generate Menu
 on:
   push:
     branches:
-      - main
+      - experiment
   workflow_dispatch:
 
 jobs:

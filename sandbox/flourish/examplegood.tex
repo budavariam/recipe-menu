@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[paper=a4paper, verbose, centering]{geometry}
+\usepackage{pgfornament}
+
+\newcommand{\corner}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm,symmetry=v]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm,symmetry=h]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm,symmetry=c]{#1}};
+  \end{tikzpicture}%
+}
+\newcommand{\cornerplus}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm,symmetry=v]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm,symmetry=h]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm,symmetry=c]{#1}};
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[width=6.5cm,symmetry=h]{#2}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[width=6.5cm]{#2}};
+  \end{tikzpicture}%
+}
+\newcommand{\pt}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[symmetry=h]{#1}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[symmetry=h]{#1}};
+  \end{tikzpicture}%
+}
+\title{Title}
+\author{Author}
+\date{}
+
+\usepackage{kantlipsum,titling}% for demo only
+
+\begin{document}
+\maketitle\corner{31}\thispagestyle{empty}
+\clearpage%
+\maketitle\cornerplus{61}{85}\thispagestyle{empty}
+\clearpage%
+\maketitle\cornerplus{63}{85}\thispagestyle{empty}
+\clearpage%
+\maketitle\pt{84}\thispagestyle{empty}
+\clearpage%
+\maketitle\pt{71}\thispagestyle{empty}
+\clearpage%
+\maketitle\pt{87}\thispagestyle{empty}
+\clearpage%
+\end{document}

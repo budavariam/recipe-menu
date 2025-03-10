@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  latex:
+    build: .
+    volumes:
+      - .:/workspace
+    command: ["sh", "-c", "lualatex --shell-escape --interaction=nonstopmode menu.tex && lualatex --shell-escape --interaction=nonstopmode menu.tex; mk4ht htlatex menu.tex \"xhtml,html5,charset=utf-8\" \" -cunihtf -utf8\" \"lualatex\""]

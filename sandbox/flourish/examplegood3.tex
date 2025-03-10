@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[paper=a4paper, verbose, centering, margin=2.5cm]{geometry}
+\usepackage{pgfornament}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{kantlipsum}
+\usepackage{eso-pic}
+
+% Define Victorian color
+\definecolor{victorianred}{RGB}{128,0,32}
+\definecolor{victoriangold}{RGB}{184,134,11}
+
+% Define border offset
+\newlength{\borderoffset}
+\setlength{\borderoffset}{2cm} % Adjust this value as needed
+
+% Adjusted corner command
+\newcommand{\corner}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=\borderoffset, yshift=-\borderoffset]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at ([xshift=-\borderoffset, yshift=-\borderoffset]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at ([xshift=\borderoffset, yshift=\borderoffset]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at ([xshift=-\borderoffset, yshift=\borderoffset]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+  \end{tikzpicture}%
+}
+
+% Adjusted cornerplus command
+\newcommand{\cornerplus}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=\borderoffset, yshift=-\borderoffset]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{#1}};
+    \node[anchor=north east] at ([xshift=-\borderoffset, yshift=-\borderoffset]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{#1}};
+    \node[anchor=south west] at ([xshift=\borderoffset, yshift=\borderoffset]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south east] at ([xshift=-\borderoffset, yshift=\borderoffset]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{#1}};
+    \node[anchor=north] at ([yshift=-\borderoffset]current page.north){%
+      \pgfornament[width=6cm, symmetry=h, color=victorianred]{#2}};
+    \node[anchor=south] at ([yshift=\borderoffset]current page.south){%
+      \pgfornament[width=6cm, color=victorianred]{#2}};
+  \end{tikzpicture}%
+}
+
+% Adjusted pt command
+\newcommand{\pt}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north] at ([yshift=-\borderoffset]current page.north){%
+      \pgfornament[width=6cm, symmetry=h, color=victorianred]{#1}};
+    \node[anchor=south] at ([yshift=\borderoffset]current page.south){%
+      \pgfornament[width=6cm, color=victorianred]{#1}};
+  \end{tikzpicture}%
+}
+
+% Add corner decorations to every page
+\AddToShipoutPicture{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=\borderoffset, yshift=-\borderoffset]current page.north west){%
+      \pgfornament[width=2cm, color=victorianred]{63}};
+    \node[anchor=north east] at ([xshift=-\borderoffset, yshift=-\borderoffset]current page.north east){%
+      \pgfornament[width=2cm, symmetry=v, color=victorianred]{63}};
+    \node[anchor=south west] at ([xshift=\borderoffset, yshift=\borderoffset]current page.south west){%
+      \pgfornament[width=2cm, symmetry=h, color=victorianred]{63}};
+    \node[anchor=south east] at ([xshift=-\borderoffset, yshift=\borderoffset]current page.south east){%
+      \pgfornament[width=2cm, symmetry=c, color=victorianred]{63}};
+    \node[anchor=north] at ([yshift=-\borderoffset]current page.north){%
+      \pgfornament[width=6cm, symmetry=h, color=victorianred]{85}};
+    \node[anchor=south] at ([yshift=\borderoffset]current page.south){%
+      \pgfornament[width=6cm, color=victorianred]{85}};
+  \end{tikzpicture}%
+}
+
+\title{Title}
+\author{Author}
+\date{}
+
+\begin{document}
+\maketitle\thispagestyle{empty}
+\kant[1-5]
+
+\clearpage
+\kant[6-10]
+
+\clearpage
+\kant[11-15]
+
+\clearpage
+\kant[16-20]
+
+\end{document}
