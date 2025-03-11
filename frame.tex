@@ -2,6 +2,10 @@
 \definecolor{victorianred}{RGB}{128,0,32}
 \definecolor{victoriangold}{RGB}{184,134,11}
 
+\newcommand{\generatedAt}{%
+    \number\year. \ifnum\month<10 0\fi\number\month. \ifnum\day<10 0\fi\number\day.%
+}
+
 % Adjusted corner command
 \newcommand{\corner}[1]{%
   \begin{tikzpicture}[remember picture, overlay]
