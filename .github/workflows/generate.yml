@@ -21,9 +21,10 @@ jobs:
         run: |
           docker compose up --build
           # ls -lh menu.pdf
-          mkdir -p ./build
+          mkdir -p ./build/images
           cp index.html menu.pdf menu.html ./build
           mv styles.css ./build/menu.css
+          cp images/menu10x.svg ./build/images/menu10x.svg
 
       - name: Deploy PDF to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

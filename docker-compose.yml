@@ -5,4 +5,12 @@ services:
     build: .
     volumes:
       - .:/workspace
-    command: ["sh", "-c", "lualatex --shell-escape --interaction=nonstopmode menu.tex && lualatex --shell-escape --interaction=nonstopmode menu.tex; mk4ht htlatex menu.tex \"xhtml,html5,charset=utf-8\" \" -cunihtf -utf8\" \"lualatex\""]
+    command: ["sh", "-c", "lualatex --shell-escape --interaction=nonstopmode menu.tex && lualatex --shell-escape --interaction=nonstopmode menu.tex; mk4ht htlatex menu.tex \"xhtml,html5,charset=utf-8\" \" -cunihtf -utf8\" \"lualatex\"; mkdir -p images; dvisvgm menu.idv --page=1- -o images/menu%0px.svg"]
+    # command: ["sh", "-c", "dvisvgm menu.idv"]
+    # command: ["sh", "-c", "dvisvgm --list menu.idv"]
+    # command: ["sh", "-c", "dvitype menu.idv"]
+    # command: ["sh", "-c", "dvisvgm menu.dvi -o images/menu-%p.svg"]
+    # EXCTARCT FULL PAGES FROM DVI
+    # command: ["sh", "-c", "dvisvgm menu.dvi --page=1- -o images/menu%0px.svg"]
+    # EXCTARCT Images from IDV
+    # command: ["sh", "-c", "dvisvgm menu.idv --page=1- -o images/menu%0px.svg"]
