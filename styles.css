@@ -34,7 +34,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("menu10x.svg") center top / contain no-repeat;
+  background: url("images/menu10x.svg") center top / contain no-repeat;
   opacity: 0.3;
   /* Adjust this to make it less/more vivid */
   z-index: -1;
